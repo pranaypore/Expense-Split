@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Split Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- THEME TOGGLE -->
+  <button id="themeToggle">🌙</button>
+
+  <!-- HEADER -->
+  <header>
+    <img src="images/expense.png" class="header-img" alt="Expense">
+    <h1>💸 Expense Split Pro</h1>
+    <p>Split expenses smartly, transparently</p>
+  </header>
+
+  <!-- DASHBOARD (HORIZONTAL WRAPPER) -->
+  <div class="dashboard">
+
+    <!-- ROLE -->
+    <div class="card">
+      <label>Select Role</label>
+      <select id="role">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+    </div>
+
+    <!-- ADD MEMBER -->
+    <div class="card">
+      <h2>Add Member</h2>
+      <input type="text" id="personName" placeholder="Enter name">
+      <button onclick="addPerson()">Add Member</button>
+      <ul id="peopleList"></ul>
+    </div>
+
+    <!-- ADD EXPENSE -->
+    <div class="card">
+      <h2>Add Expense</h2>
+      <select id="paidBy">
+        <option value="" disabled selected>Paid By</option>
+      </select>
+      <input type="number" id="amount" placeholder="Amount (₹)">
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- EXPENSE HISTORY -->
+    <div class="card">
+      <h2>Expense History</h2>
+      <ul id="expenseHistory"></ul>
+    </div>
+
+    <!-- SETTLEMENT SUMMARY -->
+    <div class="card">
+      <h2>Settlement Summary</h2>
+      <button class="secondary" onclick="calculateSettlement()">Calculate</button>
+      <ul id="summary"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
